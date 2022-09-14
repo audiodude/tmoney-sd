@@ -1,10 +1,11 @@
 import asyncio
+import uuid
 
 import meadowrun
 
 
 def main():
-  folder_name = "misc"
+  folder_name = str(uuid.uuid4())
   prompt = "Violins, violets and vixens dancing under a blazing sky on Uranus, baroque"
 
   asyncio.run(
@@ -14,7 +15,9 @@ def main():
           '--include sd-v1-4.ckpt '
           f'&& python scripts/txt2img.py --prompt "{prompt}" --plms '
           '--ckpt /var/meadowrun/machine_cache/sd-v1-4.ckpt --outdir /tmp/outputs '
-          f'&& aws s3 sync /tmp/outputs s3://tmoney-sd/{folder_name}\'',
+          f' && echo "{prompt}" >> /tmp/outputs/prompt.txt '
+          f'&& aws s3 sync /tmp/outputs s3://tmoney-sd/{folder_name} '
+          '\'',
           meadowrun.AllocCloudInstance("EC2"),
           meadowrun.Resources(logical_cpu=1,
                               memory_gb=8,
