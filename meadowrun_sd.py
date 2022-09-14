@@ -1,12 +1,17 @@
 import asyncio
+import sys
 import uuid
 
 import meadowrun
 
+def get_prompt():
+  if len(sys.argv) != 2:
+    raise ValueError('usage: meadowrun_sd "<prompt>"')
+  return sys.argv[1]
 
 def main():
   folder_name = str(uuid.uuid4())
-  prompt = "Violins, violets and vixens dancing under a blazing sky on Uranus, baroque"
+  prompt = get_prompt()
 
   asyncio.run(
       meadowrun.run_command(
