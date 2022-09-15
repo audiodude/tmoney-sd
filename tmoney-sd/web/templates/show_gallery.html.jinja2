@@ -7,11 +7,11 @@
 </head>
 <body>
   <h2>tmoney-sd</h2>
+  <p>{{ prompt }}</p>
   <div class="thumb-cont">
-    {% for gallery in galleries %}
+    {% for item in items %}
       <div class="thumb">
-        <a href="/gallery/{{ gallery['id'] }}"><img class="thumb" src="{{ gallery['url'] }}"/></a>
-        <div class='prompt'>{{ gallery['prompt'] }}</div>
+        <img class="thumb" src="{{ item['url'] }}"/></a>
       </div>
     {% endfor %}
   </div>
