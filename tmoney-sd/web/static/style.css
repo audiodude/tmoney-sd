@@ -1,0 +1,17 @@
+.thumb-cont {
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+  padding: 1rem;
+  width: 90%
+}
+
+.gallery-thumb {
+  max-width: 400px;
+}
+
+.prompt {
+  text-align: center;
+}

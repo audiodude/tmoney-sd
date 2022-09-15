@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>tmoney-sd</title>
+  <link href="/static/style.css" rel="stylesheet" />
+</head>
+<body>
+  <h2>tmoney-sd</h2>
+  <div class="thumb-cont">
+    {% for gallery in galleries %}
+      <div class="gallery-thumb">
+        <img class="gallery-thumb" src="{{ gallery['url'] }}"/>
+        <div class='prompt'>{{ gallery['prompt'] }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
