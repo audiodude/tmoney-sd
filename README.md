@@ -8,5 +8,5 @@ Requires an installed and configured (with keys) `awscli`
 
 ```shell
 $ pip install -r requirements.txt
-$ python3 meadowrun_sd.py
+$ python3 meadowrun_sd.py "A sack of potatoes, high quality, 3d render, wide angle lens, Georgia OKeefe, trending on art station"
 ```
